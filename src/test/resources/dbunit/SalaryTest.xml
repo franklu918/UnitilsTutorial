@@ -1,0 +1,5 @@
+<dataset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../db-schema/database.xsd/dataset.xsd">
+	<EMPLOYEE ID="1" NAME="Emp1" SALARY="100"/>
+	<EMPLOYEE ID="2" NAME="Emp2" SALARY="200"/>
+	<EMPLOYEE ID="3" NAME="Emp3" SALARY="3.0E2"/>
+</dataset>

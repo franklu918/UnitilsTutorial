@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+		 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+		 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<groupId>UnitilsTutorial</groupId>
+	<artifactId>UnitilsTutorial</artifactId>
+	<version>1.0</version>
+
+
+	<dependencies>
+		<dependency>
+			<groupId>org.unitils</groupId>
+			<artifactId>unitils-mock</artifactId>
+			<version>3.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>org.unitils</groupId>-->
+		<!--<artifactId>unitils-inject</artifactId>-->
+		<!--<version>3.1</version>-->
+		<!--<scope>test</scope>-->
+		<!--</dependency>-->
+		<dependency>
+			<groupId>org.unitils</groupId>
+			<artifactId>unitils-dbunit</artifactId>
+			<version>3.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>org.unitils</groupId>-->
+		<!--<artifactId>unitils-orm</artifactId>-->
+		<!--<version>3.1</version>-->
+		<!--<scope>test</scope>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+		<!--<groupId>org.unitils</groupId>-->
+		<!--<artifactId>unitils-spring</artifactId>-->
+		<!--<version>3.1</version>-->
+		<!--<scope>test</scope>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>org.unitils</groupId>
+			<artifactId>unitils-dbmaintainer</artifactId>
+			<version>3.1</version>
+			<scope>test</scope>
+		</dependency>
+		<!--<dependency>-->
+		<!--<groupId>org.unitils</groupId>-->
+		<!--<artifactId>unitils-easymock</artifactId>-->
+		<!--<version>3.1</version>-->
+		<!--<scope>test</scope>-->
+		<!--</dependency>-->
+		<!--<dependency>-->
+		<!--<groupId>org.unitils</groupId>-->
+		<!--<artifactId>unitils-testng</artifactId>-->
+		<!--<version>3.1</version>-->
+		<!--<scope>test</scope>-->
+		<!--</dependency>-->
+
+		<dependency>
+			<groupId>com.oracle</groupId>
+			<artifactId>ojdbc14</artifactId>
+			<version>10.2.0.4.0</version>
+		</dependency>
+
+
+		<!--<dependency>-->
+		<!--<groupId>org.dbunit</groupId>-->
+		<!--<artifactId>dbunit</artifactId>-->
+		<!--<version>2.2.2</version>-->
+		<!--</dependency>-->
+	</dependencies>
+
+	<build>
+		<plugins>
+			<!--<plugin>-->
+			<!--<groupId>org.codehaus.mojo</groupId>-->
+			<!--<artifactId>dbunit-maven-plugin</artifactId>-->
+			<!--<version>1.0-beta-3</version>-->
+
+			<!--&lt;!&ndash;jar file that has the jdbc driver &ndash;&gt;-->
+			<!--<dependencies>-->
+			<!--<dependency>-->
+			<!--<groupId>com.oracle</groupId>-->
+			<!--<artifactId>ojdbc14</artifactId>-->
+			<!--<version>10.2.0.4.0</version>-->
+			<!--</dependency>-->
+			<!--</dependencies>-->
+
+			<!--&lt;!&ndash; common configurations &ndash;&gt;-->
+			<!--<configuration>-->
+			<!--<driver>oracle.jdbc.driver.OracleDriver</driver>-->
+			<!--<url>jdbc:oracle:thin:@devdb03.dev.hotwire.com:1521:devbld3</url>-->
+			<!--<username>phoenix_user</username>-->
+			<!--<password>phoenix_user</password>-->
+			<!--<schema>PHOENIX_USER</schema>-->
+			<!--<dest>target/dbunit/export.xml</dest>-->
+			<!--<format>xml</format>-->
+			<!--</configuration>-->
+
+			<!--<executions>-->
+			<!--<execution>-->
+			<!--<phase>test</phase>-->
+			<!--<goals>-->
+			<!--<goal>export</goal>-->
+			<!--</goals>-->
+			<!--&lt;!&ndash; specific configurations &ndash;&gt;-->
+			<!--</execution>-->
+			<!--</executions>-->
+			<!--</plugin>-->
+			<plugin>
+				<groupId>org.dbmaintain</groupId>
+				<artifactId>dbmaintain-maven-plugin</artifactId>
+				<version>2.4</version>
+				<configuration>
+					<databases>
+						<database>
+							<driverClassName>oracle.jdbc.driver.OracleDriver</driverClassName>
+							<userName>phoenix_user</userName>
+							<password>phoenix_user</password>
+							<url>jdbc:oracle:thin:@devdb03.dev.hotwire.com:1521:devbld3</url>
+							<schemaNames>phoenix_user</schemaNames>
+						</database>
+					</databases>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>createScriptArchive</goal>
+						</goals>
+					</execution>
+				</executions>
+				<!--jar file that has the jdbc driver -->
+				<dependencies>
+					<dependency>
+						<groupId>com.oracle</groupId>
+						<artifactId>ojdbc14</artifactId>
+						<version>10.2.0.4.0</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+		</plugins>
+	</build>
+</project>
