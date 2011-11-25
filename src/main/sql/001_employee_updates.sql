@@ -1,5 +1,5 @@
 CREATE TABLE employee (
-	id NUMBER(5, 0),
-	name VARCHAR2(60 CHAR),
-	salary NUMBER(6, 2)
+	id INT,
+	name VARCHAR(255),
+--	salary NUMBER(6, 2)
 );
