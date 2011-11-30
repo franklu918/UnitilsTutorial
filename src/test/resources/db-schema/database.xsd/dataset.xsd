@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xsd:schema xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" xmlns:dflt="PUBLIC">
+	<xsd:import namespace="PUBLIC" schemaLocation="PUBLIC.xsd" />
+	<xsd:element name="dataset">
+		<xsd:complexType>
+			<xsd:choice minOccurs="0" maxOccurs="unbounded">
+				<xsd:element name="EMPLOYEE" type="dflt:EMPLOYEEType" />
+				<xsd:element name="ADDRESS" type="dflt:ADDRESSType" />
+				<xsd:element name="DBMAINTAIN_SCRIPTS" type="dflt:DBMAINTAIN_SCRIPTSType" />
+				<xsd:any namespace="PUBLIC" />
+			</xsd:choice>
+		</xsd:complexType>
+	</xsd:element>
+</xsd:schema>
